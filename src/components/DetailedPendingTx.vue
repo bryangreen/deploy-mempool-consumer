@@ -26,8 +26,8 @@
 <script lang="ts">
 
 import Vue from 'vue';
-import { PendingTransaction } from '@mempool/mempool-shared/dist/PendingTransaction';
 import DetailedPendingTransactionRow from '@/components/DetailedPendingTransactionRow.vue';
+import { PendingTransaction } from "@/shared/PendingTransaction";
 
 export default Vue.extend({
   name: 'DetailedPendingTx',
