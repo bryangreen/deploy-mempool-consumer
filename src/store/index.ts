@@ -8,8 +8,6 @@ const pendingTxs: IPendingTransaction[] = [];
 
 export default new Vuex.Store({
   state: {
-    // we store messages as a dictionary for easier access and interaction
-    // @see https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5
     pendingTxs,
   },
   mutations: {
