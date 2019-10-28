@@ -6,8 +6,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'PendingTransaction',
   computed: {
     latest() {
@@ -17,7 +19,7 @@ export default {
       return this.$store.getters.totalPendingTxs;
     },
   },
-};
+});
 </script>
 
 <style scoped>
