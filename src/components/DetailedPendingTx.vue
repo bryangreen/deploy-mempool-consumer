@@ -48,7 +48,7 @@ export default Vue.extend({
 
 <style scoped type="text/scss">
   table.txs {
-    font-size: 80%;
+    font-size: 75%;
 
     td {
       .hash {
