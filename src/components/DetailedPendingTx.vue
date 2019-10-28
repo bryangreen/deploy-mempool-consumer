@@ -5,7 +5,7 @@
         <thead>
         <tr>
           <th>Hash</th>
-          <th>None</th>
+          <th>Nonce</th>
           <th>Gas</th>
           <th>Gas Price</th>
           <th>From</th>
