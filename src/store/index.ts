@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { IPendingTransaction } from '@/shared/IPendingTransaction'; // eslint-disable-line import/no-extraneous-dependencies
+import { IPendingTransaction } from '@/shared/IPendingTransaction';
 
 Vue.use(Vuex);
 

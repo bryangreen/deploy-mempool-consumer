@@ -10,7 +10,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'PendingTransaction',
+  name: 'PendingTransactionSteam',
   computed: {
     latest() {
       return this.$store.getters.latestPendingTxs;

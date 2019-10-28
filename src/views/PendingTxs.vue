@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import PendingTransaction from '@/components/PendingTransaction.vue';
+import PendingTransactionStream from '@/components/PendingTransactionStream.vue';
 
 export default {
   name: 'txsPending',
   components: {
-    PendingTransaction,
+    PendingTransaction: PendingTransactionStream,
   },
 };
 </script>

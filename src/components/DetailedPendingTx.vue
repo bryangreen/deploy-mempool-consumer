@@ -1,7 +1,7 @@
 <template>
   <div>Showing ({{ txs.length }} of {{ count }})
     <div>
-      <table>
+      <table class="txs">
         <thead>
         <tr>
           <th>Hash</th>
@@ -15,7 +15,13 @@
         </thead>
         <tbody>
         <tr v-for="tx in txs" v-bind:key="tx.hash">
-          <DetailedPendingTransactionRow :tx="tx"/>
+          <td>{{ tx.hash }}</td>
+          <td>{{ tx.nonce }}</td>
+          <td>{{ tx.gas }}</td>
+          <td>{{ tx.gasPrice }}</td>
+          <td>{{ tx.from }}</td>
+          <td>{{ tx.to }}</td>
+          <td>{{ tx.value }}</td>
         </tr>
         </tbody>
       </table>
@@ -25,12 +31,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import DetailedPendingTransactionRow from '@/components/DetailedPendingTransactionRow.vue';
 import { IPendingTransaction } from '@/shared/IPendingTransaction';
 
 export default Vue.extend({
   name: 'DetailedPendingTx',
-  components: { DetailedPendingTransactionRow },
   computed: {
     txs(): IPendingTransaction[] {
       return this.$store.getters.latestPendingTxs;
@@ -41,3 +45,18 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped type="text/scss">
+  table.txs {
+    font-size: 80%;
+
+    td {
+      .hash {
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+</style>
