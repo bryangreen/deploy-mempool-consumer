@@ -5,14 +5,22 @@ import { IPendingTransaction } from '@/shared/IPendingTransaction';
 Vue.use(Vuex);
 
 const pendingTxs: IPendingTransaction[] = [];
+const totalTxs = 0;
 
 export default new Vuex.Store({
   state: {
     pendingTxs,
+    totalTxs,
   },
   mutations: {
     NEW_PENDING_TX(state, message: IPendingTransaction) {
       state.pendingTxs.unshift(message);
+      if (state.pendingTxs.length > 20) {
+        state.pendingTxs.pop();
+      }
+
+      // Assuming one tx per ws call
+      state.totalTxs += 1;
     },
   },
   actions: {
@@ -31,7 +39,7 @@ export default new Vuex.Store({
       return state.pendingTxs.slice(0, 20);
     },
     totalPendingTxs(state) {
-      return state.pendingTxs.length;
+      return state.totalTxs;
     },
     transaction(state) {
       return state.pendingTxs;

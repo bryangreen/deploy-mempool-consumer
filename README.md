@@ -1,4 +1,14 @@
-# mempool-consumer
+# Mempool Consumer
+
+Built from a Vue CLI
+
+Used to view pending transactions from the Mempool Aggregator
+
+Currently only shows the most recent 20 transactions, along with a counter for total transactions received.
+
+## TODO
+- Probably add chunking of transactions so that the ws stream can keep up.
+- Use Web3.js utils to process gas, gas price, etc. into numbers/units that make sense.
 
 ## Project setup
 ```
