@@ -26,7 +26,10 @@ yarn-error.log*
 *.sw?
 
 # Transpiled Javascript and associated maps
-*.js
-*.js.map
+/src/**/*.js
+/src/**/*.js.map
+
+/tests/unit/**/*.js
+/tests/unit/**/*.js.map
 
 
