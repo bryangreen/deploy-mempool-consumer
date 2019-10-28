@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { PendingTransaction } from '@mempool/mempool-shared/dist/PendingTransaction'; // eslint-disable-line import/no-extraneous-dependencies
+import { IPendingTransaction } from '@/shared/PendingTransaction'; // eslint-disable-line import/no-extraneous-dependencies
 
 Vue.use(Vuex);
 
-const pendingTxs: PendingTransaction[] = [];
+const pendingTxs: IPendingTransaction[] = [];
 
 export default new Vuex.Store({
   state: {
@@ -13,14 +13,14 @@ export default new Vuex.Store({
     pendingTxs,
   },
   mutations: {
-    NEW_PENDING_TX(state, message: PendingTransaction) {
+    NEW_PENDING_TX(state, message: IPendingTransaction) {
       state.pendingTxs.unshift(message);
     },
   },
   actions: {
     socket_message({ dispatch, commit }, message) {
       if (typeof message === 'string') {
-        const tx = <PendingTransaction>JSON.parse(message);
+        const tx = <IPendingTransaction>JSON.parse(message);
         commit('NEW_PENDING_TX', tx);
       }
     },

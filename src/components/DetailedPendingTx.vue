@@ -6,7 +6,7 @@
         <tr>
           <th>Hash</th>
           <th>None</th>
-          <th>Gas Limit</th>
+          <th>Gas</th>
           <th>Gas Price</th>
           <th>From</th>
           <th>To</th>
@@ -24,16 +24,15 @@
 </template>
 
 <script lang="ts">
-
 import Vue from 'vue';
 import DetailedPendingTransactionRow from '@/components/DetailedPendingTransactionRow.vue';
-import { PendingTransaction } from "@/shared/PendingTransaction";
+import { IPendingTransaction } from '@/shared/IPendingTransaction';
 
 export default Vue.extend({
   name: 'DetailedPendingTx',
   components: { DetailedPendingTransactionRow },
   computed: {
-    txs(): PendingTransaction[] {
+    txs(): IPendingTransaction[] {
       return this.$store.getters.latestPendingTxs;
     },
     count(): number {
